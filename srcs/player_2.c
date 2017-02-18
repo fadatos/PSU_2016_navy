@@ -5,7 +5,7 @@
 ** Login   <fadatos@epitech.net>
 ** 
 ** Started on  Sun Feb  5 23:31:11 2017 albouy titouan
-** Last update Fri Feb 17 16:42:09 2017 albouy titouan
+** Last update Sat Feb 18 13:00:25 2017 Tiphaine LAURENT
 */
 
 #include <unistd.h>
@@ -21,8 +21,6 @@ int		run_game_2(int pid, char *file, t_maps *modif)
       my_putstr_error("ERROR: superposition bateaux");
       return (84);
     }
-
-  //
   aff_tab(modif->my_tab);
   my_putstr("\n\n\n");
   aff_tab(modif->tab_shoot);

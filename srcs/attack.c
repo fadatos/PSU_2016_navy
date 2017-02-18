@@ -5,9 +5,11 @@
 ** Login   <fadatos@epitech.net>
 ** 
 ** Started on  Thu Feb 16 16:40:40 2017 albouy titouan
-** Last update Fri Feb 17 15:24:51 2017 albouy titouan
+** Last update Sat Feb 18 13:09:33 2017 Tiphaine LAURENT
 */
-/*
+
+#include "../include/navy.h"
+
 int             attack_received(char *coord, t_maps *modif)
 {
 
@@ -42,4 +44,3 @@ int             attak_send(char *coord, t_maps *modif)
     }
   return (0);
 }
-*/

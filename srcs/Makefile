@@ -5,12 +5,12 @@
 ## Login   <TiphaineLaurent@epitech.net>
 ## 
 ## Started on  Mon Jan 30 11:15:47 2017 Tiphaine LAURENT
-## Last update Fri Feb 17 16:08:10 2017 albouy titouan
+## Last update Sat Feb 18 12:57:34 2017 Tiphaine LAURENT
 ##
 
 CC	=	gcc
 CFLAGS	+=	-W -Wall
-##CFLAGS	+=	-ansi -pedantic
+#CFLAGS	+=	-ansi -pedantic
 LDFLAGS	+=	-I. -lmy -lprintf -L.
 
 NAME	=	navy
