@@ -5,7 +5,7 @@
 ** Login   <fadatos@epitech.net>
 ** 
 ** Started on  Sun Feb  5 23:08:03 2017 albouy titouan
-** Last update Sun Feb 12 21:28:23 2017 albouy titouan
+** Last update Fri Feb 17 16:35:51 2017 albouy titouan
 */
 
 #include <unistd.h>
@@ -13,15 +13,8 @@
 #include <stdlib.h>
 #include "../include/navy.h"
 
-int		run_game_1(char *file)
+int		run_game_1(char *file, t_maps *modif)
 {
-  t_maps	*modif;
-
-  if ((modif = malloc(sizeof(t_maps))) == NULL)
-      return (84);
-  my_putstr("mon pid = ");
-  my_putnbr(getpid());
-  my_putchar('\n');
   modif->tab_shoot = init_tab();
   if ((modif->my_tab = send_boat(init_tab(), parsor_file(open_file(file))))
       == NULL)
@@ -29,16 +22,19 @@ int		run_game_1(char *file)
       my_putstr_error("ERROR: superposition bateaux");
       return (84);
     }
+
+  //
   aff_tab(modif->my_tab);
   my_putstr("\n\n\n");
   aff_tab(modif->tab_shoot);
   my_putstr("\n");
+  //
 
 
   //attack_received("C1", modif);
   //aff_tab(modif->my_tab);
 }
-
+/*
 int		attack_received(char *coord, t_maps *modif)
 {
 
@@ -54,7 +50,7 @@ int		attack_received(char *coord, t_maps *modif)
     }
   return (0);
 }
-/*
+
 int		attak_send(char *coord, t_maps *modif)
 {
 

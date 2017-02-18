@@ -5,31 +5,27 @@
 ** Login   <fadatos@epitech.net>
 ** 
 ** Started on  Sun Feb  5 23:31:11 2017 albouy titouan
-** Last update Wed Feb  8 11:07:06 2017 albouy titouan
+** Last update Fri Feb 17 16:42:09 2017 albouy titouan
 */
 
 #include <unistd.h>
 #include <stdio.h>
 #include "../include/navy.h"
 
-int		run_game_2(int pid, char *file)
+int		run_game_2(int pid, char *file, t_maps *modif)
 {
-  /*
-  char		**my_tab;
-  char		**tab_shoot;
-
-  my_putstr("mon pid = ");
-  my_putnbr(getpid());
-  my_putchar('\n');
-  tab_shoot = init_tab();
-  if ((my_tab = send_boat(init_tab(), parsor_file(open_file(file)))) == NULL)
+  modif->tab_shoot = init_tab();
+  if ((modif->my_tab = send_boat(init_tab(), parsor_file(open_file(file))))
+      == NULL)
     {
       my_putstr_error("ERROR: superposition bateaux");
       return (84);
     }
-  aff_tab(tab);
+
+  //
+  aff_tab(modif->my_tab);
   my_putstr("\n\n\n");
-  aff_tab(tab_shoot);*/
-  return (84);
+  aff_tab(modif->tab_shoot);
+  my_putstr("\n");
 }
 

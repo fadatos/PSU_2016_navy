@@ -5,40 +5,26 @@
 ** Login   <fadatos@epitech.net>
 ** 
 ** Started on  Mon Jan 30 11:01:41 2017 albouy titouan
-** Last update Mon Feb 13 14:00:31 2017 albouy titouan
+** Last update Fri Feb 17 16:35:32 2017 albouy titouan
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
-#include <fcntl.h>
-#include <unistd.h>
 #include "../include/navy.h"
 
-void		usage(void)
+int		next2(int ac, char **av)
 {
-  my_putstr("USAGE\n\t  ./navy [first_player_pid] navy positions\n\n");
-  my_putstr("DESCRIPTION\n\t  first_player_pid   only for the 2nd player.");
-  my_putstr("pid of the first player,\n\t  navy_positions     ");
-  my_putstr("file representing the positions of the ships.\n");
+  t_maps        *modif;
+
+  if ((modif = malloc(sizeof(t_maps))) == NULL)
+    return (84);
+  if (ac == 2)
+    {
+      player1(modif);
+      return (run_game_1(av[1], modif));
+    }
+  return (player2(my_atoi(av[1]), av, modif));
 }
 
-char		*open_file(char *file)
-{
-   int           fd;
-  char          *str;
-  char          *buffer1;
-
-  str = "";
-   if ((fd = open(file, O_RDONLY)) < 0)
-     return (NULL);
-  while (buffer1 = get_next_line(fd, 0))
-    str = my_strcat(str, buffer1);
-  close(fd);
-  return (str);
-}
-
-int		main(int ac, char **av)
+int             next1(int ac, char **av)
 {
   if (ac == 2)
     {
@@ -55,18 +41,16 @@ int		main(int ac, char **av)
 	  return (84);
 	}
     }
+  return (next2(ac, av));
+}
+
+int		main(int ac, char **av)
+{
+  if (ac == 2 || ac == 3)
+    return (next1(ac, av));
   else
     {
       my_putstr_error("Too many arguments or too few arguments\n");
       return (84);
     }
-  return (next(ac, av));
-  }
-
-int		next(int ac, char **av)
-{
-  if (ac == 2)
-    return (run_game_1(av[1]));
-  return (run_game_2(my_atoi(av[1]), av[2]));
 }
-

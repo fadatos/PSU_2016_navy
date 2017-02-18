@@ -5,7 +5,7 @@
 ** Login   <fadatos@epitech.net>
 ** 
 ** Started on  Tue Jan 31 09:16:35 2017 albouy titouan
-** Last update Sun Feb 12 21:18:26 2017 albouy titouan
+** Last update Thu Feb 16 15:11:07 2017 albouy titouan
 */
 
 #include "stdlib.h"
@@ -24,7 +24,7 @@ int		check_size_boat(char *file, int i, int j, int k)
 	l = my_abs(file[2+j] - file[5+j]);
       if (m < 0)
 	m = my_abs(file[3+j] - file[6+j]);
-      if (m != 0 && l != file[0+j] - 49 || l != 0 && m != file[0+j] - 49)
+      if (l == 0 && m == file[0 + j] - 49 || m == 0 && l == file[0 + j] - 49)
 	{
 	  i = i + 1;
 	  k = k + file[0 + j] - 48;
